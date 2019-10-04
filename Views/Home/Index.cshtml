@@ -1,0 +1,22 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div style = 'text-align: center; width: 500px'>
+    <p>Fullness: @ViewBag.fullness Happiness: @ViewBag.happiness Meals: @ViewBag.meals Energy: @ViewBag.energy</p>
+    <div style = 'width: 500px; border: 1px solid black; margin-bottom: 50px'>
+        <img src = 'images/redPanda.png' alt = 'red panda' height = "200px">
+        <p>@ViewBag.statusText</p>
+    </div>
+    @{
+        @if(ViewBag.gameEnd) {
+            <a href = '/restart' class = 'btn btn-primary'>Restart?</a>
+        }
+        else {
+            <a href = '/feed' class = 'btn btn-primary'>Feed</a>
+            <a href = '/play' class = 'btn btn-primary'>Play</a>
+            <a href = '/work' class = 'btn btn-primary'>Work</a>
+            <a href = '/sleep' class = 'btn btn-primary'>Sleep</a>
+        }
+    }
+</div>
